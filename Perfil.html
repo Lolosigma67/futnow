@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - FutNow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/perfil.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('inicio') }}" class="logo"><i class="fas fa-futbol"></i> FutNow</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+            <li><a href="{{ url_for('crear-perfil') }}">Crea tu perfil</a></li>
+            <li><a href="{{ url_for('perfil') }}" class="active">Perfil</a></li>
+            <li><a href="{{ url_for('futmatch') }}">FutMatch</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor">
+        <div class="card-glass perfil-individual">
+            <div class="banner"></div>
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Foto de Alfonso" class="avatar">
+            
+            <div class="perfil-info">
+                <h2>Alfonso González <span class="badge">Pro</span></h2>
+                <div class="meta">
+                    <span><i class="fas fa-map-marker-alt"></i> Belgrano</span>
+                    <span><i class="fas fa-birthday-cake"></i> 24 años</span>
+                </div>
+                <p class="descripcion">"Buscando gente para jugar partidos competitivos y conocer equipos nuevos. Siempre listo para atajar."</p>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>Arquero</h3>
+                        <p>Posición</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Avanzado</h3>
+                        <p>Nivel</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>15</h3>
+                        <p>Partidos</p>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5491123925941" target="_blank" class="btn btn-ws"><i class="fab fa-whatsapp"></i> Hablar por WhatsApp</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

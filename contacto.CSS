@@ -1,0 +1,307 @@
+/* ESTILOS GENERALES Y RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    background-image: linear-gradient(
+        rgba(11, 15, 25, 0.85),
+        rgba(11, 15, 25, 0.85)
+    ), url("https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1920&q=80");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: rgba(11, 15, 25, 0.8);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #22c55e;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* VARIABLES Y ESTILOS GLOBALES DE NAVBAR */
+:root {
+    --brand-green: #4ade80;
+    --brand-green-hover: #22c55e;
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-primary: #ffffff;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--brand-green);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    opacity: 0.85;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--brand-green);
+    opacity: 1;
+}
+
+/* RESPONSIVO PARA NAVBAR */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* CONTENEDOR PRINCIPAL */
+.contenedor {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 60px 20px;
+}
+
+/* ESTRUCTURA DEL CONTACTO (Estilo imagen) */
+.contacto-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    background-color: #0d131f;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Franja vertical de color verde fútbol */
+.contacto-container::before {
+    content: '';
+    position: absolute;
+    left: 320px;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    background-color: #22c55e;
+    z-index: 1;
+}
+
+/* COLUMNA IZQUIERDA: Información */
+.info-col {
+    width: 320px;
+    padding: 50px 40px;
+    z-index: 2;
+    background-color: #0d131f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.info-col h3 {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.info-col p, 
+.info-col a {
+    font-size: 14px;
+    color: #d1d5db;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.info-col a:hover {
+    color: #22c55e;
+}
+
+.info-section {
+    margin-bottom: 40px;
+}
+
+/* Redes sociales */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    width: 36px;
+    height: 36px;
+    background: #ffffff;
+    color: #0d131f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: #22c55e;
+    color: #ffffff;
+}
+
+/* COLUMNA DERECHA: Formulario */
+.form-col {
+    flex: 1;
+    padding: 50px 50px 50px 60px;
+    z-index: 2;
+    position: relative;
+}
+
+.form-col h2 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #ffffff;
+}
+
+/* Campos de entrada */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background-color: #f3f4f6;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #1f2937;
+    border-radius: 2px;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+/* Botón de envío */
+.btn-submit {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    padding: 12px 35px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #ffffff;
+    color: #0d131f;
+}
+
+/* Alerta Flash de Flask */
+.alert-success {
+    background-color: rgba(34, 197, 94, 0.2);
+    border: 1px solid #22c55e;
+    color: #22c55e;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* RESPONSIVE (Móviles y Tablets) */
+@media (max-width: 900px) {
+    .contacto-container {
+        flex-direction: column;
+    }
+
+    .contacto-container::before {
+        display: none;
+    }
+
+    .info-col, 
+    .form-col {
+        width: 100%;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 700px) 
+    .navbar 
+        padding: 15px 20px

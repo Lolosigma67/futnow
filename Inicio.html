@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutNow - Conecta con el fútbol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/inicio.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('inicio') }}" class="logo"><i class="fas fa-futbol"></i> FutNow</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('inicio') }}" class="active">Inicio</a></li>
+            <li><a href="{{ url_for('crear_perfil') }}">Crear Perfil</a></li>
+            <li><a href="{{ url_for('perfil') }}">Perfil</a></li>
+            <li><a href="{{ url_for('futmatch') }}">FutMatch</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido a <span class="highlight">FutNow</span></h1>
+                <p>La plataforma definitiva para organizar tus partidos de fútbol y conectar con jugadores de tu zona. Sin vueltas, solo fútbol.</p>
+                <div class="hero-buttons">
+                    <a href="{{ url_for('futmatch') }}" class="btn btn-primary"><i class="fas fa-search"></i> Buscar Partido</a>
+                    <a href="{{ url_for('crear_perfil') }}" class="btn btn-secondary"><i class="fas fa-user-plus"></i> Crear Perfil</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="card-glass feature-card">
+                <i class="fas fa-users feature-icon"></i>
+                <h3>Encuentra Jugadores</h3>
+                <p>¿Te falta uno para completar? Conecta al instante con jugadores disponibles cerca tuyo.</p>
+            </div>
+            <div class="card-glass feature-card">
+                <i class="fas fa-map-marker-alt feature-icon"></i>
+                <h3>Partidos Locales</h3>
+                <p>Filtra por zona y nivel de juego para asegurarte un partido competitivo y divertido.</p>
+            </div>
+            <div class="card-glass feature-card">
+                <i class="fab fa-whatsapp feature-icon"></i>
+                <h3>Contacto Directo</h3>
+                <p>Olvida los grupos desordenados. Habla directo con el jugador mediante un solo clic.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 FutNow. Diseñado para amantes del fútbol.</p>
+    </footer>
+</body>
+</html>

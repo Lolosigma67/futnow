@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutMatch - FutNow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/futmatch.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('inicio') }}" class="logo"><i class="fas fa-futbol"></i> FutNow</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('inicio') }}">Inicio</a></li>
+            <li><a href="{{ url_for('crear-perfil') }}">Crea tu perfil</a></li>
+            <li><a href="{{ url_for('perfil') }}">Perfil</a></li>
+            <li><a href="{{ url_for('futmatch') }}" class="active">FutMatch</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor">
+        <header class="text-center">
+            <h1>Encuentra tu próximo partido</h1>
+            <p>Jugadores disponibles y listos para jugar cerca tuyo.</p>
+        </header>
+
+        <div class="grid-perfiles">
+            <!-- Tarjeta 1 -->
+            <article class="card-glass card-perfil">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Jugador Tito">
+                    <span class="badge-nivel intermedio">Intermedio</span>
+                </div>
+                <div class="info-perfil">
+                    <h2>Tito <span class="edad">37 años</span></h2>
+                    <ul class="datos">
+                        <li><i class="fas fa-tshirt"></i> Delantero</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Palermo</li>
+                    </ul>
+                    <a href="https://wa.me/5491123456789" class="btn btn-ws" target="_blank"><i class="fab fa-whatsapp"></i> Contactar</a>
+                </div>
+            </article>
+
+            <!-- Tarjeta 2 -->
+            <article class="card-glass card-perfil">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Jugador Alfonso">
+                    <span class="badge-nivel avanzado">Avanzado</span>
+                </div>
+                <div class="info-perfil">
+                    <h2>Alfonso <span class="edad">24 años</span></h2>
+                    <ul class="datos">
+                        <li><i class="fas fa-tshirt"></i> Arquero</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Belgrano</li>
+                    </ul>
+                    <a href="https://wa.me/5491123925941" class="btn btn-ws" target="_blank"><i class="fab fa-whatsapp"></i> Contactar</a>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+</html>

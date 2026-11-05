@@ -1,0 +1,107 @@
+:root {
+    --bg-dark: #0f172a; --bg-card: rgba(255, 255, 255, 0.05); --bg-card-hover: rgba(255, 255, 255, 0.08);
+    --text-primary: #f1f5f9; --text-secondary: #94a3b8;
+    --brand-green: #10b981; --ws-green: #25D366; --ws-green-hover: #20ba5a;
+    --border-radius: 16px; --transition: all 0.3s ease;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--bg-dark) 70%); color: var(--text-primary); min-height: 100vh; display: flex; flex-direction: column; }
+/* VARIABLES Y ESTILOS GLOBALES DE NAVBAR */
+:root {
+    --brand-green: #4ade80;
+    --brand-green-hover: #22c55e;
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --text-primary: #ffffff;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background: rgba(11, 17, 32, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--brand-green);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    opacity: 0.85;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--brand-green);
+    opacity: 1;
+}
+
+/* RESPONSIVO PARA NAVBAR */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px;
+        height: auto;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.contenedor { flex: 1; padding: 60px 8%; }
+.text-center { text-align: center; margin-bottom: 50px; }
+.text-center h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.text-center p { color: var(--text-secondary); font-size: 1.1rem; }
+
+.grid-perfiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+
+.card-glass { background: var(--bg-card); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: var(--border-radius); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); transition: var(--transition); overflow: hidden; }
+.card-perfil:hover { background: var(--bg-card-hover); transform: translateY(-8px); border-color: rgba(16, 185, 129, 0.3); }
+
+.img-container { position: relative; }
+.card-perfil img { width: 100%; height: 250px; object-fit: cover; }
+.badge-nivel { position: absolute; top: 15px; right: 15px; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; backdrop-filter: blur(5px); }
+.intermedio { background: rgba(245, 158, 11, 0.9); color: #fff; }
+.avanzado { background: rgba(16, 185, 129, 0.9); color: #fff; }
+
+.info-perfil { padding: 25px; }
+.info-perfil h2 { font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.edad { font-size: 1rem; font-weight: 400; color: var(--text-secondary); }
+
+.datos { list-style: none; margin-bottom: 25px; }
+.datos li { color: var(--text-secondary); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+.datos i { color: var(--brand-green); width: 16px; }
+
+.btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: 600; border: none; cursor: pointer; font-size: 15px; transition: var(--transition); font-family: 'Inter', sans-serif; }
+.btn-ws { background: var(--ws-green); color: #fff; }
+.btn-ws:hover { background: var(--ws-green-hover); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
+
+@media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; } .text-center h1 { font-size: 1.8rem; } }

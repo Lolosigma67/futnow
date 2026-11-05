@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Perfil - FutNow</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/crear-perfil.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('inicio') }}" class="logo"><i class="fas fa-futbol"></i> FutNow</a>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('inicio') }}" class="{% if request.endpoint == 'inicio' %}active{% endif %}">Inicio</a></li>
+            <li><a href="{{ url_for('crear_perfil') }}" class="{% if request.endpoint == 'crear_perfil' %}active{% endif %}">Crear Perfil</a></li>
+            <li><a href="{{ url_for('perfil') }}" class="{% if request.endpoint == 'perfil' %}active{% endif %}">Perfil</a></li>
+            <li><a href="{{ url_for('futmatch') }}" class="{% if request.endpoint == 'futmatch' %}active{% endif %}">FutMatch</a></li>
+            <li><a href="{{ url_for('contacto') }}" class="{% if request.endpoint == 'contacto' %}active{% endif %}">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main class="contenedor">
+        <section class="card-glass form-container">
+            <h2>Crear tu Cuenta</h2>
+            <p class="subtitle">Únete a la comunidad de FutNow en segundos.</p>
+            
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {% for message in messages %}
+                  <div class="alert-success">
+                    <i class="fas fa-check-circle"></i> {{ message }}
+                  </div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            <form method="POST" action="{{ url_for('crear_perfil') }}">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="Ej: correo@dominio.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="edad">Edad</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-calendar"></i>
+                        <input type="number" id="edad" name="edad" placeholder="Ej: 25" min="10" max="80" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-check"></i> Registrarse</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
